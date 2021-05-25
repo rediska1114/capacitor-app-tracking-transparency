@@ -2,7 +2,8 @@
 
 # Available methods:
 
-- `isDebug()`
+- `getStatus()`
+- `requestPermission()`
 
 # Usage example:
 
@@ -10,34 +11,35 @@
 
 ```ts
 ...
-import { DetectEnvironment } from 'capacitor-detect-environment'
+import { AppTrackingTransparency } from 'capacitor-app-tracking-transparency'
 
 @NgModule({
 	...
 	providers: [
 		...
-		DetectEnvironment,
+		AppTrackingTransparency,
 	],
 })
 export class AppModule {}
 
 ```
 
-2. In your component or service (e.g. `api.service.ts`)
+2. In your component or service (e.g. `permission.service.ts`)
 
 ```ts
 ...
-import { DetectEnvironment } from 'capacitor-detect-environment'
+import { AppTrackingTransparency, AppTrackingTransparencyStatus } from 'capacitor-app-tracking-transparency'
 
 @Injectable()
-export class ApiService {
-	constructor(private env: DetectEnvironment) {}
+export class PermissionService {
+	constructor(private att: AppTrackingTransparency) {}
 
-    async getApiHost() {
-        const isDebug = await this.env.isDebug()
-        if (isDebug) return 'https://dev.api.com'
-        else return 'https://api.com'
-    }
+    async requestATT() {
+		const status = await this.att.getStatus()
+		if(status === AppTrackingTransparencyStatus.unrequested) {
+			const new_status = await this.att.requestPermission()
+		}
+	}
 }
 
 ```
