@@ -1,0 +1,62 @@
+{
+  "name": "capacitor-app-tracking-transparency",
+  "version": "0.1.0",
+  "description": "Capacitor plugin to request user authorization to access app-related data for tracking the user or the device. iOS only.",
+  "main": "dist/plugin.js",
+  "module": "dist/esm/index.js",
+  "types": "dist/esm/index.d.ts",
+  "scripts": {
+    "lint": "npm run prettier -- --check && npm run swiftlint -- lint",
+    "prettier": "prettier \"**/*.{css,html,ts,js,java}\"",
+    "swiftlint": "node-swiftlint",
+    "build": "npm run clean && tsc && rollup -c rollup.config.js",
+    "clean": "rimraf ./dist",
+    "watch": "tsc --watch",
+    "prepublishOnly": "npm run build"
+  },
+  "author": "rediska1114 <rediska1114@gmail.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "@capacitor/android": "^2.4.7",
+    "@capacitor/core": "^2.4.7",
+    "@capacitor/ios": "^2.4.7",
+    "@ionic/prettier-config": "^1.0.0",
+    "@ionic/swiftlint-config": "^1.0.0",
+    "@rollup/plugin-node-resolve": "^8.1.0",
+    "prettier": "^2.0.5",
+    "prettier-plugin-java": "^0.8.0",
+    "rimraf": "^3.0.0",
+    "rollup": "^2.21.0",
+    "swiftlint": "^1.0.1",
+    "typescript": "~3.8.3"
+  },
+  "peerDependencies": {
+    "@angular/core": ">=10.0.0",
+    "@capacitor/core": "^2.4.0",
+    "rxjs": ">=6.5.3"
+  },
+  "files": [
+    "dist/",
+    "ios/",
+    "CapacitorAppTrackingTransparency.podspec"
+  ],
+  "keywords": [
+    "capacitor",
+    "plugin",
+    "native"
+  ],
+  "capacitor": {
+    "ios": {
+      "src": "ios"
+    }
+  },
+  "prettier": "@ionic/prettier-config",
+  "swiftlint": "@ionic/swiftlint-config",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/rediska1114/capacitor-app-tracking-transparency.git"
+  },
+  "bugs": {
+    "url": "https://github.com/rediska1114/capacitor-app-tracking-transparency.git/issues"
+  }
+}
