@@ -28,6 +28,7 @@
     "prettier-plugin-java": "^0.8.0",
     "rimraf": "^3.0.0",
     "rollup": "^2.21.0",
+    "rxjs": "^6.6.7",
     "swiftlint": "^1.0.1",
     "typescript": "~3.8.3"
   },
