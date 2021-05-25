@@ -11,13 +11,13 @@ const ATTPlugin =
 
 function wrapMethod(
   f: () => Promise<AppTrackingTransparencyResponse>,
-): Promise<AppTrackingTransparencyStatus> {
-  return f().then(v => v.value);
+): () => Promise<AppTrackingTransparencyStatus> {
+  return () => f().then(v => v.value);
 }
 
 type IAppTrackingTransparency = Record<
   keyof CapacitorAppTrackingTransparencyPlugin,
-  Promise<AppTrackingTransparencyStatus>
+  () => Promise<AppTrackingTransparencyStatus>
 >;
 
 @Injectable()
