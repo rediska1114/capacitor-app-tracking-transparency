@@ -1,4 +1,3 @@
-import { Injectable } from '@angular/core';
 import { Plugins } from '@capacitor/core';
 import {
   AppTrackingTransparencyStatus,
@@ -20,7 +19,6 @@ type IAppTrackingTransparency = Record<
   () => Promise<AppTrackingTransparencyStatus>
 >;
 
-@Injectable()
 export class AppTrackingTransparency implements IAppTrackingTransparency {
   getStatus = wrapMethod(ATTPlugin.getStatus);
   requestPermission = wrapMethod(ATTPlugin.requestPermission);

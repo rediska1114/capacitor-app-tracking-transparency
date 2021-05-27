@@ -1,2 +1,2 @@
 export * from './definitions';
-export * from "./ngx"
+export * from './plugin';
