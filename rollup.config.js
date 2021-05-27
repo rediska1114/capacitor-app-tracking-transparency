@@ -25,7 +25,7 @@ export default {
     copy({
       targets: [
         { src: 'ios/**/*', dest: 'dist/ios' },
-        { src: 'CapacitorAdapty.podspec', dest: 'dist' },
+        { src: 'CapacitorAppTrackingTransparency.podspec', dest: 'dist' },
         { src: 'README.md', dest: 'dist' },
       ],
     }),
