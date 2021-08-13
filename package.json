@@ -1,6 +1,6 @@
 {
   "name": "capacitor-app-tracking-transparency",
-  "version": "0.1.4",
+  "version": "1.1.4",
   "description": "Capacitor plugin to request user authorization to access app-related data for tracking the user or the device. iOS only.",
   "main": "plugin.js",
   "module": "esm/index.js",
