@@ -12,10 +12,10 @@ public class CapacitorAppTrackingTransparency: CAPPlugin {
         if #available(iOS 14.0, *) {
             let status: ATTrackingManager.AuthorizationStatus = ATTrackingManager.trackingAuthorizationStatus
             call.success([
-                "status": status.rawValue == 0 ? "unrequested" : status.rawValue == 1 ? "restricted" : status.rawValue == 2 ? "denied" : status.rawValue == 3 ? "authorized" : "",
+                "value": status.rawValue == 0 ? "unrequested" : status.rawValue == 1 ? "restricted" : status.rawValue == 2 ? "denied" : status.rawValue == 3 ? "authorized" : "",
             ])
         } else {
-            call.success(["status": "authorized"])
+            call.success(["value": "authorized"])
         }
     }
 
@@ -24,11 +24,11 @@ public class CapacitorAppTrackingTransparency: CAPPlugin {
             ATTrackingManager.requestTrackingAuthorization { res in
                 let status = res
                 call.success([
-                    "status": status.rawValue == 0 ? "unrequested" : status.rawValue == 1 ? "restricted" : status.rawValue == 2 ? "denied" : status.rawValue == 3 ? "authorized" : "",
+                    "value": status.rawValue == 0 ? "unrequested" : status.rawValue == 1 ? "restricted" : status.rawValue == 2 ? "denied" : status.rawValue == 3 ? "authorized" : "",
                 ])
             }
         } else {
-            call.success(["status": "authorized"])
+            call.success(["value": "authorized"])
         }
     }
 }
