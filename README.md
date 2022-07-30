@@ -2,8 +2,8 @@
 
 # Available methods:
 
-- `getStatus()`
-- `requestPermission()`
+- `getStatus(): Promise<AppTrackingTransparencyStatus>`
+- `requestPermission(): Promise<AppTrackingTransparencyStatus>`
 
 # Usage example:
 
@@ -36,10 +36,17 @@ export class PermissionService {
 
     async requestATT() {
 		const status = await this.att.getStatus()
-		if(status === AppTrackingTransparencyStatus.unrequested) {
+		if(status === AppTrackingTransparencyStatus.notDetermined) {
 			const new_status = await this.att.requestPermission()
 		}
 	}
 }
 
 ```
+
+## BREAKING CHANGES in 2.x.x version
+
+- Status "unrequested" has been changed to status "notDetermined" to more closely match the native enum
+  https://developer.apple.com/documentation/apptrackingtransparency/attrackingmanager/authorizationstatus
+
+- Added full support for Capacitor 3 and removed compatibility with Capacitor 2

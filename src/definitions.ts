@@ -1,11 +1,5 @@
-declare module '@capacitor/core' {
-  interface PluginRegistry {
-    CapacitorAppTrackingTransparency: CapacitorAppTrackingTransparencyPlugin;
-  }
-}
-
 export enum AppTrackingTransparencyStatus {
-  unrequested = 'unrequested',
+  notDetermined = 'notDetermined',
   restricted = 'restricted',
   denied = 'denied',
   authorized = 'authorized',
@@ -15,7 +9,7 @@ export interface AppTrackingTransparencyResponse {
   value: AppTrackingTransparencyStatus;
 }
 
-export interface CapacitorAppTrackingTransparencyPlugin {
+export interface AppTrackingTransparencyPlugin {
   getStatus(): Promise<AppTrackingTransparencyResponse>;
   requestPermission(): Promise<AppTrackingTransparencyResponse>;
 }
