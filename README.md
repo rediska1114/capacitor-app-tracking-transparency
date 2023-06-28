@@ -7,6 +7,13 @@
 
 # Usage example:
 
+0. Do not forget to add `NSUserTrackingUsageDescription` to your `Info.plist` file
+
+```xml
+<key>NSUserTrackingUsageDescription</key>
+<string>YOUR DESCRIPTION</string>
+```
+
 1. In your module (e.g. `app.module.ts`)
 
 ```ts
@@ -43,6 +50,10 @@ export class PermissionService {
 }
 
 ```
+
+## BREAKING CHANGES in 3.x.x version
+
+- Add support for Capacitor 5 and remove compatibility with Capacitor 3
 
 ## BREAKING CHANGES in 2.x.x version
 
